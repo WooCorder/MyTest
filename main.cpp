@@ -24,18 +24,20 @@ void main()
 	Mat first_img, second_img, third_img;
 	int differenceFrame = 0;
 
+	first_vc >> first_img;
+
 	for (int frameCount = 0; first_img.data != NULL; frameCount++)
 	{
 		first_vc >> first_img;
 
-		if (frameCount > DIFFERENCE_FRAME_THRESHOLD)
+		/*if (frameCount > DIFFERENCE_FRAME_THRESHOLD)
 			second_vc >> second_img;
 
 		if (frameCount > DIFFERENCE_FRAME_THRESHOLD * 2)
-			third_vc >> third_img;
+			third_vc >> third_img;*/
 
 		imshow("pre video", first_img);
-		imshow("video", second_img);
+		//imshow("video", second_img);
 
 		if (waitKey(10) == 27) break; //ESC
 	}
